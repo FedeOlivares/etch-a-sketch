@@ -53,3 +53,18 @@ body {
     }
     
 }
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    min-width: 75vw;
+    max-width: 85vw;
+}
+
+@media (min-width:600px) {
+    .controls{
+        min-width: 45vw;
+        max-width: 55vw;
+    }
+    
+}
