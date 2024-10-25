@@ -1,3 +1,11 @@
+:root {
+--cel-width: 60vw;
+--pc-width: 60vh;
+--container-pc: 70vh;
+--container-cel: 85vw;
+--slider-value: 50;
+}
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: content-box;
@@ -15,16 +23,18 @@ body {
     justify-content: space-evenly;
     align-items: center;
     border-radius: 30px;
-    min-height: 80vh;
-    max-height: 90vh;
-    min-width: 85vw;
-    max-width: 95vw;
+    min-height: var(--conrtainer-cel);
+    max-height: var(--conrtainer-cel);
+    min-width: var(--conrtainer-cel);
+    max-width: var(--conrtainer-cel);
     background-color: brown;
 }
 @media (min-width:500px) {
     .container {
-        min-width: 55vw;
-        max-width: 70vw;
+        min-width: var(--container-pc);
+        max-width: var(--container-pc);
+        min-height: var(--container-pc);
+        max-height: var(--container-pc);
     }
     
 }
@@ -37,10 +47,12 @@ body {
 }
 
 .view {
-    min-height: 60vh;
-    max-height: 70vh;
-    min-width: 70vw;
-    max-width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: var(--cel-width);
+    max-height: var(--cel-width);
+    min-width: var(--cel-width);
+    max-width: var(--cel-width);
     border-width: 5px;
     border-color: black;
     background-color: grey;
@@ -48,8 +60,10 @@ body {
 
 @media (min-width:500px) {
     .view{
-        min-width: 45vw;
-        max-width: 65vw;
+        min-height: var(--pc-width);
+        max-height: var(--pc-width);
+        min-width: var(--pc-width);
+        max-width: var(--pc-width);
     }
     
 }
@@ -57,14 +71,31 @@ body {
 .controls {
     display: flex;
     justify-content: space-between;
-    min-width: 75vw;
-    max-width: 85vw;
+    min-width: 70vw;
+    max-width: 70vw;
 }
 
 @media (min-width:600px) {
     .controls{
-        min-width: 45vw;
-        max-width: 55vw;
+        min-width: 50vh;
+        max-width: 50vh;
+    }   
+}
+
+.functionDiv {
+    background-color: aquamarine;
+    min-width: calc(var(--slider-value) / var(--cel-width));
+    max-width: calc(var(--slider-value) / var(--cel-width));
+    min-height: calc(var(--slider-value) / var(--cel-width));
+    max-height: calc(var(--slider-value) / var(--cel-width));
+}
+@media (min-width:500px) {
+    .functionalDiv{
+        max-width: calc(var(--slider-value) / var(--pc-width));
+        min-width: calc(var(--slider-value) / var(--pc-width));
+        max-height: calc(var(--slider-value) / var(--pc-width));
+        min-height: calc(var(--slider-value) / var(--pc-width));
+
     }
-    
+
 }
