@@ -3,12 +3,11 @@
 --pc-width: 60vh;
 --container-pc: 70vh;
 --container-cel: 85vw;
---slider-value: 50;
 }
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    box-sizing: content-box;
+    box-sizing: border-box;
     margin: 0;
     height: 100vh;
     display: flex;
@@ -53,8 +52,6 @@ body {
     max-height: var(--cel-width);
     min-width: var(--cel-width);
     max-width: var(--cel-width);
-    border-width: 5px;
-    border-color: black;
     background-color: grey;
 }
 
@@ -84,18 +81,24 @@ body {
 
 .functionDiv {
     background-color: aquamarine;
-    min-width: calc(var(--slider-value) / var(--cel-width));
-    max-width: calc(var(--slider-value) / var(--cel-width));
-    min-height: calc(var(--slider-value) / var(--cel-width));
-    max-height: calc(var(--slider-value) / var(--cel-width));
+    margin: 0;
+    border-width: 0;
+    padding: 0;
+    width: calc(var(--cel-width) / var(--slider-value));
+    height: calc(var(--cel-width) / var(--slider-value));
 }
 @media (min-width:500px) {
-    .functionalDiv{
-        max-width: calc(var(--slider-value) / var(--pc-width));
-        min-width: calc(var(--slider-value) / var(--pc-width));
-        max-height: calc(var(--slider-value) / var(--pc-width));
-        min-height: calc(var(--slider-value) / var(--pc-width));
+    .functionDiv{
+        width: calc( var(--pc-width) / var(--slider-value) );
+        height: calc( var(--pc-width) / var(--slider-value) );
 
     }
 
 }
+
+/* -
+
+    to do, move widths to html css as to get width to be inline, that 
+    way slider division can be worked on by JS directly 
+
+- */
