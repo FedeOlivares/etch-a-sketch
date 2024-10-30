@@ -96,6 +96,27 @@ body {
 
 }
 
+.slidecontainer {
+    position: relative;
+}
+
+.bubble {
+    position: absolute;
+    top: -30px; /* Adjust to place above the slider */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    visibility: hidden;
+}
+
+.slider:hover + .bubble {
+    visibility: visible;
+}
+
 /* -
 
     to do, move widths to html css as to get width to be inline, that 
