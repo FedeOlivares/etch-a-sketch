@@ -1,5 +1,6 @@
 const view = document.querySelector(".view");
 const inp = document.getElementById("myRange");
+const color = document.getElementById("randomColor");
 let side = inp.value;
 let totalDivs = side * side;
 
