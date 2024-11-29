@@ -19,7 +19,13 @@ function createDivs() {
     }
     const functionalDivs = document.querySelectorAll(".functionDiv");
     functionalDivs.forEach((div) => {
-        div.addEventListener("mouseover", () => setColor(div));
+        div.addEventListener("mouseover", () => {
+            if (div.style.backgroundColor != "black") {
+                setColor(div);
+            } else if (div.style.opacity < 1) {
+                increaseOpacity(div);
+            };
+        });
     });
 }
 
@@ -53,4 +59,11 @@ window.onload = () => {
 
 function setColor(div) {
     div.style.backgroundColor = "black";
+    div.style.opacity = 0.1;
+}
+
+function increaseOpacity(div) {
+    let currentOpacity = window.getComputedStyle(div).getPropertyValue('opacity');
+    let newOpacity = parseFloat(currentOpacity) + 0.1;
+    div.style.opacity = newOpacity;
 }

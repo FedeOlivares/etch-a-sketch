@@ -81,6 +81,7 @@ body {
 
 .functionDiv {
     background-color: whitesmoke;
+    opacity: 1;
     margin: 0;
     border-width: 0;
     padding: 0;
